@@ -237,7 +237,13 @@ class LinkPlayPlayer:
             raise ValueError(
                 f"EQ value must be one of: {EQUALIZER_MODES}."
             )
-        await self.bridge.request(LinkPlayCommand.EQ_LOAD.format(eq))     
+        await self.bridge.request(LinkPlayCommand.EQ_LOAD.format(eq))
+
+    async def set_audio_output_hw_mode(self, mode: OutputMode) -> None:
+        """Set the play mode."""
+        await self.bridge.request(
+            LinkPlayCommand.AUDIO_OUTPUT_MODE_HW_SET.format(OUTPUT_MODE_HW_MAP[mode])
+        )  # type: ignore[str-format]
 
     @property
     def muted(self) -> bool:
