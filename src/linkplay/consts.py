@@ -455,7 +455,7 @@ class MultiroomAttribute(StrEnum):
 EQUALIZER_MODES = ["Flat", "Acoustic", "Bass Booster", "Bass Reducer", "Classical", "Dance", "Deep", "Electronic", 
 "Hip-Hop", "Jazz", "Latin", "Loudness", "Lounge", "Piano", "Pop", "R&B", "Rock", "Small Speakers", "Spoken Word", "Treble Booster", "Treble Reducer", "Vocal Booster"]
 
-class OutputModeHW(StrEnum):
+class OutputHwMode(StrEnum):
     """Defines a possible playing mode."""
     OPTICAL = "1"
     LINE_OUT = "2"
@@ -464,9 +464,9 @@ class OutputModeHW(StrEnum):
    
 
 # Map between a play mode and how to activate the play mode
-OUTPUT_MODE_HW_MAP: dict[PlayingMode, str] = {  # case sensitive!
-    OutputModeHW.OPTICAL: "optical",
-    OutputModeHW.LINE_OUT: "line-out",
-    OutputModeHW.COAXIAL: "co-axial",
-    OutputModeHW.HEADPHONES: "headphones",
+OUTPUT_HW_MODE_MAP: dict[PlayingMode, str] = {  # case sensitive!
+    OutputHwMode.OPTICAL: "optical",
+    OutputHwMode.LINE_OUT: "line-out",
+    OutputHwMode.COAXIAL: "co-axial",
+    OutputHwMode.HEADPHONES: "headphones",
 }
