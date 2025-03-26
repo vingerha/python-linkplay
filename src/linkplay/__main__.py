@@ -7,6 +7,7 @@ from linkplay.utils import async_create_unverified_client_session
 async def main():
     async with await async_create_unverified_client_session() as session:
         controller = LinkPlayController(session)
+        LOGGER.debug("Controller: %s", controller)
 
         await controller.discover_bridges()
         for bridge in controller.bridges:
