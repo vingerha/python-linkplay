@@ -96,7 +96,7 @@ async def discover_linkplay_bridges(
                 multiroom_discovered_bridges[new_bridge.device.uuid] = new_bridge
 
         bridges = bridges | multiroom_discovered_bridges
-
+    LOGGER.debug("Bridges: 5s", list(bridges.values())
     return list(bridges.values())
 
 
